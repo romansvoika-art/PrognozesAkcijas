@@ -21,8 +21,9 @@ jobs:
         run: pip install requests
 
       - name: Run bot
+        run: python bot.py
         env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
         run: python bot.py
         
