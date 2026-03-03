@@ -2,8 +2,8 @@ name: Stock News Bot
 
 on:
   schedule:
-    - cron: '0 8,20 * * *'  # 2 раза в день (08:00 и 20:00 UTC)
-    workflow_dispatch:
+    - cron: '0 8,20 * * *'  # 08:00 и 20:00 UTC
+  workflow_dispatch:
 
 jobs:
   run-bot:
@@ -21,9 +21,7 @@ jobs:
         run: pip install requests
 
       - name: Run bot
-        run: python bot.py
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
         run: python bot.py
-        
