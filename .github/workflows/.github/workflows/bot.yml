@@ -1,9 +1,9 @@
 name: Stock News Bot
 
 on:
-  schedule:
-    - cron: '0 8,20 * * *'  # 08:00 и 20:00 UTC
-  workflow_dispatch:
+  workflow_dispatch:   # ← это позволяет запускать вручную из UI
+  push:                # если хочешь автоматический запуск при пушах
+    branches: [ main ]
 
 jobs:
   run-bot:
